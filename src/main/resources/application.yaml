@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: shorty
+  datasource:
+    url: jdbc:h2:mem:urldb  # H2 인메모리 DB 주소
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true  # 웹 브라우저에서 DB 내용을 확인할 수 있게 설정
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create  # 서버 시작 시 엔티티를 바탕으로 테이블을 자동 생성
+    show-sql: true      # 콘솔에 JPA가 실행하는 쿼리를 출력
+    properties:
+      hibernate:
+        format_sql: true # 출력되는 쿼리를 보기 좋게 정렬
